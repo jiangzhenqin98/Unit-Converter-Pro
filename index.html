@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>单位转换王</title>
+</head>
+<body>
+    <h1>单位转换王</h1>
+    <form>
+        <span>
+            <input type="number" id="number1"  name="input1"/>
+            <select id="单位1" name="select1">
+                <optgroup label="重量">
+                    <option value="1">kg</option>
+                    <option value="2" disabled>g</option>
+                </optgroup>
+            </select>
+            <label>转换至→</label>
+            <input type="number" id="number2" name="input2" readonly />
+            <select id="单位2" name="select2">
+                <optgroup label="重量">
+                    <option value="1">kg</option>
+                    <option value="2">g</option>
+                </optgroup>
+            </select>
+        </span>
+        <br />
+        <button type="button" onclick="unity()">转换</button>
+    </form>
+    <script>
+        function unity() {
+            const number1 = Number(document.getElementById('number1').value);
+            const unity1 = document.getElementById('单位1').value;
+            const unity2 = document.getElementById('单位2').value;
+            
+            if (unity1 == '1' && unity2 == '1') {
+                document.getElementById('number2').value = number1;
+            }
+            if (unity1 == '1' && unity2 == '2') {
+                document.getElementById('number2').value = number1 * 1000;
+            }
+        }
+        
+    </script>
+    <h2>剩余内容正在努力开发中，jiangzhenqin98为您效犬马之劳！</h2>
+</body>
+</html>
